@@ -42,11 +42,6 @@ __END__
 
 Plass - Instance based OOP
 
-=head1 INSTALL
-
-  $ git clone git://github.com/ytnobody/Plass.git
-  $ cpanm ./Plass
-
 =head1 SYNOPSIS
 
   my $cat = plass 

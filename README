@@ -1,27 +1,59 @@
-This is Perl module Plass.
+NAME
+    Plass - Instance based OOP
 
-INSTALLATION
+INSTALL
+      $ git clone git://github.com/ytnobody/Plass.git
+      $ cpanm ./Plass
 
-Plass installation is straightforward. If your CPAN shell is set up,
-you should just be able to do
+SYNOPSIS
+      my $cat = plass 
+          meow => sub { print shift->voice."\n" },
+          look => sub { print shift->profile->name. " looking ". shift. "\n" },
+          voice => 'Meow...',
+          profile => { name => "Kiki", age => 4 },
+          surface => [ 'Black', 'Talkable' ];
+  
+      $cat->meow; ### say "Meow..."
+  
+      $cat->look( "you" ); ### say "Kiki looking you"
+  
+      my $talkcat = $cat->plass( 
+          voice => "I'm hungry...",
+          look => sub { print shift->profile->name. " not looking ". shift. "\n" },
+      );
+      $talkcat->profile->name( "Jiji" );
+  
+      $talkcat->meow; ### say "I'm hungry..."
+  
+      $talkcat->look( "you" ); ### say "Jiji not looking you"
 
-    % cpan Plass
+DESCRIPTION
+    An aim of Plass is to present environment of instance-based-OOP.
 
-Download it, unpack it, then build it as per the usual:
+Philosophy of Plass
+  simplification of coding
+    Plass aims destroy partition among class and object.
 
-    % perl Makefile.PL
-    % make && make test
+    Specifically, class-name contained in Plass-object is nonsense.
 
-Then install it:
+    Because Plass-object's class-name is "Plass".
 
-    % make install
+    To generate an instance in instance-based-OOP means make clone from an
+    universal instance.
 
-DOCUMENTATION
+  extendable easy
+    In Plass, inherits is superseded by trait.
 
-Plass documentation is available as in POD. So you can do:
+    Trait is expressed by Hash that contains some-values and/or coderef.
 
-    % perldoc Plass
+  usability over speed
+    In developing Plass, please priority over usability than speed.
 
-to read the documentation online with your favorite pager.
+AUTHOR
+    satoshi azuma <ytnobody@gmail.com>
 
-satoshi azuma
+SEE ALSO
+LICENSE
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
