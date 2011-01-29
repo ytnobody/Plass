@@ -96,6 +96,10 @@ Trait is expressed by Hash that contains some-values and/or coderef.
 
 In developing Plass, please priority over usability than speed.
 
+=head1 TODO
+
+Writing tests
+
 =head1 AUTHOR
 
 satoshi azuma E<lt>ytnobody@gmail.comE<gt>
