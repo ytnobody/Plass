@@ -1,0 +1,75 @@
+
+=head1 NAME
+
+Plass - Instance based OOP
+
+=head1 INSTALL
+
+  $ git clone git://github.com/ytnobody/Plass.git
+  $ cpanm ./Plass
+
+=head1 SYNOPSIS
+
+  my $cat = plass 
+      meow => sub { print shift->voice."\n" },
+      look => sub { print shift->profile->name. " looking ". shift. "\n" },
+      voice => 'Meow...',
+      profile => { name => "Kiki", age => 4 },
+      surface => [ 'Black', 'Talkable' ];
+  
+  $cat->meow; ### say "Meow..."
+  
+  $cat->look( "you" ); ### say "Kiki looking you"
+  
+  my $talkcat = $cat->plass( 
+      voice => "I'm hungry...",
+      look => sub { print shift->profile->name. " not looking ". shift. "\n" },
+  );
+  $talkcat->profile->name( "Jiji" );
+  
+  $talkcat->meow; ### say "I'm hungry..."
+  
+  $talkcat->look( "you" ); ### say "Jiji not looking you"
+
+=head1 DESCRIPTION
+
+An aim of Plass is to present environment of instance-based-OOP.
+
+=head1 Philosophy of Plass
+
+=head2 simplification of coding
+
+Plass aims destroy partition among class and object. 
+
+Specifically, class-name contained in Plass-object is nonsense.
+
+Because Plass-object's class-name is "Plass".
+
+To generate an instance in instance-based-OOP means make clone from an universal instance.
+
+=head2 extendable easy
+
+In Plass, inherits is superseded by trait.
+
+Trait is expressed by Hash that contains some-values and/or coderef.
+
+=head2 usability over speed
+
+In developing Plass, please priority over usability than speed.
+
+=head1 TODO
+
+Writing tests
+
+=head1 AUTHOR
+
+satoshi azuma E<lt>ytnobody@gmail.comE<gt>
+
+=head1 SEE ALSO
+
+=head1 LICENSE
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut
