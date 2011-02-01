@@ -8,3 +8,5 @@ __DATA__
 satoshi azuma
 ytnobody@gmail.com
 Plass
+OOP
+TODO
