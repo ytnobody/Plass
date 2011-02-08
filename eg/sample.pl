@@ -1,10 +1,8 @@
 use warnings;
 use strict;
-use Data::Dumper;
 use FindBin;
 use lib ( "$FindBin::Bin/../lib" );
 use Plass;
-use LWP::UserAgent;
 
   my $cat = plass 
       meow => sub { print shift->voice."\n" },
@@ -17,8 +15,6 @@ use LWP::UserAgent;
   
   $cat->look( "you" ); ### say "Kiki looking you"
 
-  print Dumper( $cat );
-  
   my %trait = (
       voice => "I'm hungry...",
       look => sub { print shift->profile->name. " not looking ". shift. "\n" },
@@ -31,10 +27,3 @@ use LWP::UserAgent;
   
   $talkcat->look( "you" ); ### say "Jiji not looking you"
 
-  print Dumper( $talkcat );
-
-  my $browser = plass;
-  $browser->morph( 'LWP::UserAgent' );
-  print Dumper( $browser );
-  print Dumper( $browser->agent );
-#   print Dumper( $browser->request( GET => 'http://www.yahoo.co.jp/' ) );
