@@ -86,7 +86,7 @@ Because Plass-object's class-name is "Plass".
 
 To generate an instance in instance-based-OOP means make clone from an universal instance.
 
-=head2 extendable easy
+=head2 able to extend easy
 
 In Plass, inherits is superseded by trait.
 

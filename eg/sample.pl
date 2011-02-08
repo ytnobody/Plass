@@ -4,6 +4,7 @@ use Data::Dumper;
 use FindBin;
 use lib ( "$FindBin::Bin/../lib" );
 use Plass;
+use LWP::UserAgent;
 
   my $cat = plass 
       meow => sub { print shift->voice."\n" },
@@ -32,4 +33,8 @@ use Plass;
 
   print Dumper( $talkcat );
 
-
+  my $browser = plass;
+  $browser->morph( 'LWP::UserAgent' );
+  print Dumper( $browser );
+  print Dumper( $browser->agent );
+#   print Dumper( $browser->request( GET => 'http://www.yahoo.co.jp/' ) );
