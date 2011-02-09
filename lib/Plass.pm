@@ -63,7 +63,7 @@ sub feature {
     my %features;
     my $val;
     for my $key ( keys %f ) {
-        next if $key =~ /^(AUTOLOAD|DESTROY|ISA|isa|feature|plass|method|mix)/;
+        next if $key =~ /^(AUTOLOAD|DESTROY|ISA|isa|feature|plass|method|mix|::ISA::CACHE::)$/;
         $val = $f{ $key };
         $features{ $key } = defined $self->{ $key } ? $self->{ $key } : *{ $val }{ CODE };
     }
@@ -177,7 +177,7 @@ In Plass, inherits is superseded by trait.
 
 Trait is expressed by Hash that contains some-values and/or coderef.
 
-=head2 USABILLITY OVER SPEED
+=head2 USABILITY OVER SPEED
 
 In developing Plass, please priority over usability than speed.
 
@@ -185,7 +185,7 @@ In developing Plass, please priority over usability than speed.
 
 - performance benchmark.
 
-- more friendry trait.
+- more friendly trait.
 
 =head1 AUTHOR
 
