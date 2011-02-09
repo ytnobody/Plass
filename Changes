@@ -2,3 +2,8 @@ Revision history for Perl extension Plass
 
 0.01    Fri Jan 28 01:36:30 2011
         - original version
+
+0.02    Wed Feb  9 10:35:11 2011
+        - mix method/command was enabled.
+        - tests was added.
+
