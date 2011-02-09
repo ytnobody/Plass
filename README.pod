@@ -1,3 +1,4 @@
+
 =head1 NAME
 
 Plass - Instance based OOP
@@ -102,7 +103,7 @@ In Plass, inherits is superseded by trait.
 
 Trait is expressed by Hash that contains some-values and/or coderef.
 
-=head2 USABILLITY OVER SPEED
+=head2 USABILITY OVER SPEED
 
 In developing Plass, please priority over usability than speed.
 
@@ -110,7 +111,7 @@ In developing Plass, please priority over usability than speed.
 
 - performance benchmark.
 
-- more friendry trait.
+- more friendly trait.
 
 =head1 AUTHOR
 
