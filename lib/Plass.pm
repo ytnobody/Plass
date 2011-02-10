@@ -63,7 +63,7 @@ sub feature {
     my %features;
     my $val;
     for my $key ( keys %f ) {
-        next if $key =~ /^(AUTOLOAD|DESTROY|ISA|isa|feature|plass|method|mix|::ISA::CACHE::)$/;
+        next if $key =~ /^(BEGIN|AUTOLOAD|DESTROY|ISA|isa|feature|plass|method|mix|::ISA::CACHE::)$/;
         $val = $f{ $key };
         $features{ $key } = defined $self->{ $key } ? $self->{ $key } : *{ $val }{ CODE };
     }
