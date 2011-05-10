@@ -7,7 +7,7 @@ requires 'Hash::AsObject';
 requires 'Object::Method';
 
 tests 't/*.t';
-author_tests 'xt';
+# author_tests 'xt';
 
 test_requires 'Test::More';
 auto_include;
